@@ -1,0 +1,38 @@
+<div class="ui fluid segment" id="lp-image-content" >
+
+	<div class="ui right floated inverted compact transparent segment" id="lp-blurb">
+		<div class="ui inverted center aligned huge header">
+		 Cumulus 
+		 <div class="sub header">
+		 	College admissions, disrupted.
+		 </div>
+		</div>
+		<div class="ui small center aligned header">
+		    	Cumulus uses an
+		    	AI-driven approach to maximize your college
+		    	admissions chances
+		</div>
+
+
+		{{#if signed_up }}
+			<div class="ui message"> 
+				<i class="green checkmark icon"/> 
+				Thanks for signing up! 
+				We'll be in touch soon <i class="smile icon" /> 
+			</div>
+		{{else}}
+		  {{#if invalid_email}}
+		  	<div class="ui centered warning message"> Please enter a valid email </div>
+		  {{/if}}						
+			<form {{action "signup" email on="submit"}} class="ui form">
+				<div class="ui left icon input {{if invalid_email 'error'}}">			
+					  <i class="{{if invalid_email 'red'}} mail icon"></i>
+					  {{input class="ui left icon" value=email placeholder="Email"}}	
+					<button class="ui red button" type="submit"> Blastoff </button>
+				</div>
+			</form>
+		{{/if}}
+	</div>
+
+
+</div>

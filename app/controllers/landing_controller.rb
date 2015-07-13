@@ -1,5 +1,5 @@
 class LandingController < ApplicationController
 	def index
-		render text: "", layout: 'layouts/application.html.erb'		
+		render file: 'public/index.html'		
 	end
 end

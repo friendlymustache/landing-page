@@ -48,7 +48,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.host = "http://cumulus.com";
+    ENV.host = "http://froshmate.herokuapp.com";
   }
 
   return ENV;

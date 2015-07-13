@@ -20,6 +20,17 @@ module LandingPage
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    config.action_mailer.delivery_method = :smtp
+    # SMTP settings for gmail
+    config.action_mailer.smtp_settings = {
+     :address              => "smtp.gmail.com",
+     :port                 => 587,
+     :user_name            => ENV['FROSHMATE_GMAIL_USERNAME'],
+     :password             => ENV['FROSHMATE_GMAIL_PASSWORD'],
+     :authentication       => "plain",
+    :enable_starttls_auto => true
+    }
+
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
   end

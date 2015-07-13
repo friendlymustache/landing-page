@@ -1,13 +1,14 @@
 class UsersController < ApplicationController
 	skip_before_action :verify_authenticity_token
 	def create
-		puts user_params
 		@user = User.create(user_params)
+	    # SendEmailJob.set(wait: 3.seconds).perform_later(@user)
+		UserMailer.welcome_email(@user).deliver_now
 		render :nothing => true
 	end	
 
 private
 	def user_params
-	  params.require(:user).permit(:email)
+	  params.require(:user).permit(:email, :user_type)
 	end	
 end

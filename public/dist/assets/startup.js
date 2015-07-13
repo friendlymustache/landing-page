@@ -707,7 +707,7 @@ catch(err) {
 if (runningTests) {
   require("startup/tests/test-helper");
 } else {
-  require("startup/app")["default"].create({"name":"startup","version":"0.0.0+fd3ca735"});
+  require("startup/app")["default"].create({"name":"startup","version":"0.0.0+7ea9def8"});
 }
 
 /* jshint ignore:end */

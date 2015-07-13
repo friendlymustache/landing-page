@@ -329,7 +329,7 @@ define('startup/templates/index', ['exports'], function (exports) {
           var el3 = dom.createElement("button");
           dom.setAttribute(el3,"class","ui red button");
           dom.setAttribute(el3,"type","submit");
-          var el4 = dom.createTextNode(" Blastoff ");
+          var el4 = dom.createTextNode(" Sign up ");
           dom.appendChild(el3, el4);
           dom.appendChild(el2, el3);
           var el3 = dom.createTextNode("\n				");
@@ -399,11 +399,11 @@ define('startup/templates/index', ['exports'], function (exports) {
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("div");
         dom.setAttribute(el3,"class","ui inverted center aligned huge header");
-        var el4 = dom.createTextNode("\n		 Cumulus \n		 ");
+        var el4 = dom.createTextNode("\n		 Froshmate \n		 ");
         dom.appendChild(el3, el4);
         var el4 = dom.createElement("div");
         dom.setAttribute(el4,"class","sub header");
-        var el5 = dom.createTextNode("\n		 	College admissions, disrupted.\n		 ");
+        var el5 = dom.createTextNode("\n		 	College admissions, rethought.\n		 ");
         dom.appendChild(el4, el5);
         dom.appendChild(el3, el4);
         var el4 = dom.createTextNode("\n		");
@@ -413,7 +413,7 @@ define('startup/templates/index', ['exports'], function (exports) {
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("div");
         dom.setAttribute(el3,"class","ui small center aligned header");
-        var el4 = dom.createTextNode("\n		    	Cumulus uses an\n		    	AI-driven approach to maximize your college\n		    	admissions chances\n		");
+        var el4 = dom.createTextNode("\n		    	Froshmate uses an\n		    	AI-driven approach to maximize your college\n		    	admissions chances\n		");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n\n\n");
@@ -707,7 +707,7 @@ catch(err) {
 if (runningTests) {
   require("startup/tests/test-helper");
 } else {
-  require("startup/app")["default"].create({"name":"startup","version":"0.0.0+c25549a0"});
+  require("startup/app")["default"].create({"name":"startup","version":"0.0.0+fd3ca735"});
 }
 
 /* jshint ignore:end */

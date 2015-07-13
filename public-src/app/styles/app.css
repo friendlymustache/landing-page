@@ -14,7 +14,8 @@
 
 #lp-blurb {
   margin-top: 200px;
-  width: 500px;
+  min-width: 500px;
+  width: 40%;
   margin-right: 12%;
 }
 
@@ -22,13 +23,15 @@
 	background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
-
-@media (max-width: 600px) {
+@media (max-width: 900px) {
 	.transparent {
 		background-color: rgb(0, 0, 0) !important;
-	}
+	}	
+}
 
+@media (max-width: 600px) {
 	#lp-blurb {
+		min-width: 0px;
 		margin-right: 0px;
 		width: 95%;
 	}

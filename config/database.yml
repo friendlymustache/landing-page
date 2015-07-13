@@ -83,6 +83,6 @@ test:
 #
 production:
   <<: *default
-  database: learning_production
-  username: learning
-  password: <%= ENV['LEARNING_DATABASE_PASSWORD'] %>
+  database: landing_page_production
+  username: landing_page
+  password: <%= ENV['LANDING_PAGE_DATABASE_PASSWORD'] %>

@@ -19,8 +19,25 @@
   margin-right: 12%;
 }
 
+.link {
+	color: rgba(255, 255, 255, 0.9);
+}
+
+.link:hover {
+	color: white;
+}
+
 .transparent {
 	background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark-transparent {
+	background-color: rgba(0, 0, 0, 0.8) !important;
+	border: none; !important;
+}
+
+.borderless {
+	border: none !important;
 }
 
 @media (max-width: 900px) {

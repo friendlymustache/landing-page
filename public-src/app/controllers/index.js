@@ -13,6 +13,10 @@ export default Ember.Controller.extend({
       var valid = this.validate(email, user_type);     
       // If form valid, submit
       if (valid) {
+        ga('send', 'signup', {
+          'email': email,
+          'user_type': user_type
+        });        
         var record = this.store.createRecord('user', {'email' : email, 'user_type' : user_type});
         record.save();
         this.set('signed_up', true);

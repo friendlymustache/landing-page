@@ -21,10 +21,14 @@ module.exports = function(environment) {
       'font-src': "'self' data: fonts.gstatic.com",
       'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
       'img-src': "*",
-      'connect-src' : "*"
+      'connect-src' : "*",
+      'script-src' : "'self' 'unsafe-inline' www.google-analytics.com",
     },    
   };
 
+  ENV.googleAnalytics = {
+      webPropertyId: 'UA-65187916-1'
+  };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

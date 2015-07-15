@@ -9,19 +9,24 @@ export default Ember.Controller.extend({
 		signup : function() {	
       var email = this.get('email');
       var user_type = this.get('user_type');
+      var school = this.get('school');
       // Form validations
       var valid = this.validate(email, user_type);     
       // If form valid, submit
       if (valid) {
         ga('send', 'signup');          
-        var record = this.store.createRecord('user', {'email' : email, 'user_type' : user_type});
+        var record = this.store.createRecord('user', {'email' : email, 'user_type' : user_type, 'school' : school});
         record.save();
         this.set('signed_up', true);
       }
 		},
 
-    set_user_type : function(type) {
-      this.set('user_type', type);
+    set_user_type : function(user_type) {
+      ga('send', 'changed_user_type');                
+      var in_school = (user_type === "High Schooler" || user_type === "College Student");
+      this.set('in_school', in_school);      
+      console.log("In school: " + in_school);        
+      this.set('user_type', user_type);
     }
 	},
 

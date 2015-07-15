@@ -57,7 +57,7 @@ module.exports = function(environment) {
     ENV.host = "http://froshmate.herokuapp.com";
     ENV.googleAnalytics = {
         webPropertyId: 'UA-65187916-1',
-        tracker: 'analytics.js'
+        tracker: 'analytics_debug.js'
     };    
   }
 

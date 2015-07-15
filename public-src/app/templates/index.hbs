@@ -40,29 +40,38 @@
 					      I'm a...
 					    </div>		
 			      		  <div class="item" {{action "set_user_type" "High Schooler" }}>
-						      <i class="child icon" />
+						      <i class="grey child icon" />
 						      High Schooler
 					      </div>					    			    
 					      <div class="item" {{action "set_user_type" "College Student" }}>
-						      <i class="student icon" />
+						      <i class="grey student icon" />
 						      College Student
 					      </div>
-					      <div class="item" data-value="1" {{action "set_user_type" "Parent" }}>
-						      <i class="user icon" />
+					      <div class="item" {{action "set_user_type" "Parent" }}>
+						      <i class="grey user icon" />
 						      Parent
 					      </div>
-					      <div class="item" data-value="1" {{action "set_user_type" "Teacher" }}>
-						      <i class="idea icon" />
+					      <div class="item" {{action "set_user_type" "Teacher" }}>
+						      <i class="grey idea icon" />
 						      Teacher
 					      </div>
-					      <div class="item" data-value="1" {{action "set_user_type" "Guidance Counselor" }}>
-						      <i class="users icon" />
+					      <div class="item" {{action "set_user_type" "Guidance Counselor" }}>
+						      <i class="grey users icon" />
 						      Guidance Counselor
 					      </div>					      
 
 					    </div>
 					  </div>
 				</div>
+
+				{{#if in_school}}
+				<div class="field">
+					<div class="ui left icon input">
+						<i class="university icon"/>
+						{{input value=school placeholder="School"}}
+					</div>
+				</div>
+				{{/if}}
 
 			  {{#if invalid_email}}
 			  	<div class="field">

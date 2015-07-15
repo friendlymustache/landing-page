@@ -26,9 +26,6 @@ module.exports = function(environment) {
     },    
   };
 
-  ENV.googleAnalytics = {
-      webPropertyId: 'UA-65187916-1'
-  };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -37,6 +34,11 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.host = "http://localhost:3000";
+    ENV.googleAnalytics = {
+        webPropertyId: 'UA-65187916-1',
+        tracker: 'analytics_debug.js'
+    };
+
   }
 
   if (environment === 'test') {
@@ -53,6 +55,10 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.host = "http://froshmate.herokuapp.com";
+    ENV.googleAnalytics = {
+        webPropertyId: 'UA-65187916-1',
+        tracker: 'analytics.js'
+    };    
   }
 
   return ENV;

@@ -2,11 +2,18 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   signed_up : false,
+  already_signed_up : false,
   invalid_email : false,
   invalid_user_type : false,
   prompt : "I'm a...",
 	actions : {
 		signup : function() {	
+      var self = this;
+      var saveSucess = function(response) {
+      };
+      var saveFailure = function(reason) {
+        self.set('already_signed_up', true);
+      };
       var email = this.get('email');
       var user_type = this.get('user_type');
       var school = this.get('school');
@@ -16,7 +23,7 @@ export default Ember.Controller.extend({
       if (valid) {
         ga('send', 'signup');          
         var record = this.store.createRecord('user', {'email' : email, 'user_type' : user_type, 'school' : school});
-        record.save();
+        record.save().then(saveSucess).catch(saveFailure);
         this.set('signed_up', true);
       }
 		},

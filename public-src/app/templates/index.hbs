@@ -18,7 +18,11 @@
 		{{#if signed_up }}
 			<div class="ui message"> 
 				<i class="green checkmark icon"/> 
+				{{#if already_signed_up}}
+				Looks like you've already signed up - thanks again for your interest!
+				{{else}}
 				Thanks for signing up! 
+				{{/if}}
 				We'll be in touch soon <i class="smile icon" /> 
 			</div>
 		{{else}}				

@@ -25,7 +25,6 @@ export default Ember.Controller.extend({
       ga('send', 'changed_user_type');                
       var in_school = (user_type === "High Schooler" || user_type === "College Student");
       this.set('in_school', in_school);      
-      console.log("In school: " + in_school);        
       this.set('user_type', user_type);
     }
 	},

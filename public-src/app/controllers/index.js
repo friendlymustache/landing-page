@@ -15,7 +15,10 @@ export default Ember.Controller.extend({
       if (valid) {
         ga('send', 'signup', {
           'email': email,
-          'user_type': user_type
+          'user_type': user_type,
+          'hitCallback' : function() {
+            console.log("Logged signup via GA");
+          }
         });        
         var record = this.store.createRecord('user', {'email' : email, 'user_type' : user_type});
         record.save();
@@ -33,7 +36,6 @@ export default Ember.Controller.extend({
       this.set('invalid_email', !email_valid); 
       var user_type_valid = this.isUserTypeValid(user_type);
       this.set('invalid_user_type', !user_type_valid);
-      console.log("Email valid: " + email_valid + ", " + "type valid : " + user_type_valid);
       return email_valid && user_type_valid;
 
   },

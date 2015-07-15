@@ -30,7 +30,8 @@ export default Ember.Controller.extend({
 
     set_user_type : function(user_type) {
       ga('send', 'changed_user_type');                
-      var in_school = (user_type === "High Schooler" || user_type === "College Student" || user_type === "Guidance Counselor");
+      var in_school = (user_type === "High Schooler" || user_type === "College Student" 
+        || user_type === "Guidance Counselor" || user_type === "Teacher");
       this.set('in_school', in_school);      
       this.set('user_type', user_type);
     }

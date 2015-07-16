@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
       var self = this;
       var saveSucess = function(response) {
       };
-      var saveFailure = function(reason) {
+      var saveFailure = function(reason) {        
         self.set('already_signed_up', true);
       };
       var email = this.get('email');
@@ -21,7 +21,7 @@ export default Ember.Controller.extend({
       var valid = this.validate(email, user_type);     
       // If form valid, submit
       if (valid) {
-        ga('send', 'signup');          
+        ga('send', 'event', 'button', 'signup');          
         var record = this.store.createRecord('user', {'email' : email, 'user_type' : user_type, 'school' : school});
         record.save().then(saveSucess).catch(saveFailure);
         this.set('signed_up', true);
@@ -29,7 +29,6 @@ export default Ember.Controller.extend({
 		},
 
     set_user_type : function(user_type) {
-      ga('send', 'changed_user_type');                
       var in_school = (user_type === "High Schooler" || user_type === "College Student" 
         || user_type === "Guidance Counselor" || user_type === "Teacher");
       this.set('in_school', in_school);      

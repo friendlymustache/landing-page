@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 		@user = User.create(user_params)
 		if @user.valid?
 		    # SendEmailJob.set(wait: 3.seconds).perform_later(@user)
-			# UserMailer.welcome_email(@user).deliver_now
+			UserMailer.welcome_email(@user).deliver_now
 			render json: @user
 		else
 			render status: :conflict, json: nil

@@ -32,7 +32,7 @@ gem "rack-cors", require: "rack/cors"
 # Add active model serializers
 gem 'active_model_serializers', '0.8.3'
 
-gem 'io-console'
+gem 'io-console', '~> 0.4.2'
 gem 'thin'
 
 # Use ActiveModel has_secure_password

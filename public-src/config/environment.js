@@ -54,9 +54,9 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.host = "http://ec2-54-68-115-156.us-west-2.compute.amazonaws.com/";
+    ENV.host = "http://ec2-52-24-159-62.us-west-2.compute.amazonaws.com";
     ENV.googleAnalytics = {
-        webPropertyId: 'UA-65187916-2',
+        webPropertyId: 'UA-65187916-3',
         tracker: 'analytics.js'
     };    
   }

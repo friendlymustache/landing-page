@@ -54,9 +54,9 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.host = "http://froshmate.herokuapp.com";
+    ENV.host = "http://ec2-54-68-115-156.us-west-2.compute.amazonaws.com/";
     ENV.googleAnalytics = {
-        webPropertyId: 'UA-65187916-1',
+        webPropertyId: 'UA-65187916-2',
         tracker: 'analytics.js'
     };    
   }

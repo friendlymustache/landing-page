@@ -85,4 +85,4 @@ production:
   <<: *default
   database: landing_page_production
   username: landing_page
-  password: <%= ENV['LANDING_PAGE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['http_LANDING_PAGE_DATABASE_PASSWORD'] %>

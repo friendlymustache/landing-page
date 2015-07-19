@@ -4,5 +4,5 @@ threaded: true
 no-epoll: true
 daemonize: true
 socket: tmp/sockets/thin.sock
-chdir: /home/ec2-user/froshmate/
+chdir: /home/ubuntu/froshmate/landing-page/current
 tag: landing-page aux

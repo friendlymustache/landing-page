@@ -48,14 +48,32 @@ server "52.24.159.62", roles: [:app, :web, :db], :primary => true
 set :stages, ["production"]
 set :default_stage, "production"
 
+
+
+def thin_exec cmd
+  run "cd #{current_path}; thin #{cmd.to_s} -C /etc/thin/#{application}.yml"
+end
+ 
+namespace :deploy do
+  desc "Starts the thin application server"
+  task :start do
+    thin_exec :start
+  end
+  
+  desc "Stops the thin application server"
+  task :stop do
+    thin_exec :stop
+  end
+  
+
 namespace :deploy do
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+      within release_path do
+        execute :rake, 'assets:precompile'
+      end
     end
   end
 
@@ -76,9 +94,10 @@ namespace :deploy do
     CMD
   end
 
-  desc "Restart applicaiton"
+  desc "Restart application"
   task :restart do
-    run "#{ try_sudo } touch #{ File.join(current_path, 'tmp', 'restart.txt') }"
+      execute "service thin restart"  ## -> line you should add
   end  
+  after :publishing, :restart
 
 end

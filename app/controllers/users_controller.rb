@@ -3,7 +3,6 @@ class UsersController < ApplicationController
 	def create
 		@user = User.create(user_params)
 		if @user.valid?
-		    SendEmailJob.set(wait: 3.seconds).perform_later(@user)
 		    mailchimp = Mailchimp::API.new(ENV['http_MAILCHIMP_API_KEY'])
 		    mailchimp.lists.subscribe(ENV['http_MAILCHIMP_LIST_ID'],
                    {email: @user.email}, {

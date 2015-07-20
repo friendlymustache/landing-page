@@ -25,8 +25,8 @@ module LandingPage
     config.action_mailer.smtp_settings = {
      :address              => "smtp.gmail.com",
      :port                 => 587,
-     :user_name            => ENV['FROSHMATE_GMAIL_USERNAME'],
-     :password             => ENV['FROSHMATE_GMAIL_PASSWORD'],
+     :user_name            => ENV['http_FROSHMATE_GMAIL_USERNAME'],
+     :password             => ENV['http_FROSHMATE_GMAIL_PASSWORD'],
      :authentication       => "plain",
     :enable_starttls_auto => true
     }

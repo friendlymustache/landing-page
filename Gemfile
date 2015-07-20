@@ -23,6 +23,10 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Use Mailchimp API
+gem 'mailchimp-api', require: 'mailchimp'
+
+
 # Use dotenv to store sensitive information
 gem 'dotenv-rails', :groups => [:development, :test]
 

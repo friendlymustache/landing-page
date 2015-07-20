@@ -25,7 +25,7 @@ Rails.application.configure do
   # Allow CORS from froshmate.com
   config.middleware.insert_before 0, "Rack::Cors" do
       allow do
-        origins 'froshmate.com, www.froshmate.com'
+        origins 'froshmate.com', 'www.froshmate.com'
         resource '*',
           :headers => :any,
           :methods => [:get, :post, :delete, :put, :options, :head],

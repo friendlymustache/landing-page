@@ -22,6 +22,17 @@ Rails.application.configure do
   # NGINX, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
+  # Allow CORS from froshmate.com
+  config.middleware.insert_before 0, "Rack::Cors" do
+      allow do
+        origins 'froshmate.com, www.froshmate.com'
+        resource '*',
+          :headers => :any,
+          :methods => [:get, :post, :delete, :put, :options, :head],
+          :max_age => 0
+      end
+    end    
+
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.serve_static_files = true
